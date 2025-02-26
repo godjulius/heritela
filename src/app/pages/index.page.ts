@@ -1,4 +1,5 @@
 import { Component, signal } from '@angular/core';
+import {Button} from "primeng/button";
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,7 @@ import { Component, signal } from '@angular/core';
   template: `
     <div>
       <a href="https://analogjs.org/" target="_blank">
-        <img alt="Analog Logo" class="logo analog" src="/analog.svg" />
+        <img alt="Analog Logo" class="logo analog" src="/analog.svg"/>
       </a>
     </div>
 
@@ -14,8 +15,9 @@ import { Component, signal } from '@angular/core';
 
     <h3>The fullstack meta-framework for Angular!</h3>
 
-    <div class="card">
+    <div class="card flex gap-2 justify-center">
       <button type="button" (click)="increment()">Count {{ count() }}</button>
+      <p-button label="increase" (click)="increment()"></p-button>
     </div>
 
     <p class="read-the-docs">
@@ -45,6 +47,9 @@ import { Component, signal } from '@angular/core';
       }
     }
   `,
+  imports: [
+    Button
+  ]
 })
 export default class HomeComponent {
   count = signal(0);
