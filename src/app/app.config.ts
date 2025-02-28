@@ -8,11 +8,21 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideFileRouter, requestContextInterceptor } from '@analogjs/router';
 import { providePrimeNG } from "primeng/config";
 import {MyPreset} from "./app-preset";
+import {provideFileRouter, requestContextInterceptor, withDebugRoutes, withExtraRoutes} from '@analogjs/router';
+import {Routes} from "@angular/router";
+
+const customRoutes: Routes = [
+  {
+    path: 'contact',
+    loadComponent: () =>
+      import('./custom_pages/contact/contact.component').then((m) => m.ContactComponent),
+  },
+]
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideFileRouter(),
+    provideFileRouter(withExtraRoutes(customRoutes), withDebugRoutes()),
     provideHttpClient(
       withFetch(),
       withInterceptors([requestContextInterceptor])
