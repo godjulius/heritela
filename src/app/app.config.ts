@@ -5,11 +5,11 @@ import {
 } from '@angular/common/http';
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideFileRouter, requestContextInterceptor } from '@analogjs/router';
 import { providePrimeNG } from "primeng/config";
 import {MyPreset} from "./app-preset";
 import {provideFileRouter, requestContextInterceptor, withDebugRoutes, withExtraRoutes} from '@analogjs/router';
 import {Routes} from "@angular/router";
+import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
 
 const customRoutes: Routes = [
   {
@@ -25,8 +25,10 @@ export const appConfig: ApplicationConfig = {
     provideFileRouter(withExtraRoutes(customRoutes), withDebugRoutes()),
     provideHttpClient(
       withFetch(),
-      withInterceptors([requestContextInterceptor])
+      withInterceptors([requestContextInterceptor]),
+      withDebugRoutes()
     ),
+    provideAnimationsAsync(),
     provideClientHydration(),
     providePrimeNG({
       theme: {

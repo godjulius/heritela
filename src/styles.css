@@ -5,5 +5,21 @@
 
 /* You can add global styles to this file, and also import other style files */
 :root {
+  margin: 0;
+  padding: 0;
+}
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+app-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f3f4f6;
 }

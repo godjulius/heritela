@@ -1,0 +1,26 @@
+<div class="flex w-full h-full flex-col items-center">
+  <!-- Ảnh lớn với hiệu ứng kéo -->
+  <div
+    class="relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-grab active:cursor-grabbing"
+    (mousedown)="onMouseDown($event)"
+    (touchstart)="onMouseDown($event)"
+    (touchmove)="onMouseMove($event)"
+    (touchend)="onMouseUp()"
+  >
+    <div
+      class="flex transition-transform duration-300 ease-in-out"
+      [ngStyle]="{
+        'transform': 'translateX(' + (-currentIndex * 100) + '%) translateX(' + translateX + 'px)',
+        'transition': isDragging ? 'none' : 'transform 0.3s ease-in-out'
+      }"
+    >
+      <img
+        *ngFor="let img of images; let i = index"
+        [src]="img"
+        class="w-full object-cover flex-shrink-0"
+      />
+    </div>
+  </div>
+
+ <app-carousel [(currentIndex)]="currentIndex" [viewWidth]="viewWidth"></app-carousel>
+</div>
