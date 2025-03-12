@@ -1,0 +1,255 @@
+<app-container>
+  <div class="flex flex-col lg:flex-row text-left gap-8">
+    <!-- Left Section -->
+    <div class="lg:w-1/2">
+      <app-slideshow></app-slideshow>
+    </div>
+    <!-- Right Section -->
+    <div class="lg:w-1/2">
+      <h1 class="text-2xl font-medium mb-2">
+        Dây đồng hồ da Kỳ Đà – Xanh Da Trời
+      </h1>
+      <p class="text-xl mb-4">
+        {{ 900000 | currency:'VND' }}
+      </p>
+      <div class="flex gap-8">
+        <a class="text-blue-500 text-sm underline mb-2 block" href="#">
+          Hướng dẫn đo kích thước
+        </a>
+        <a class="text-blue-500 text-sm underline mb-4 block" href="#">
+          Tùy chỉnh Kiểu Dáng
+        </a>
+      </div>
+      <div class="mb-4 w-full">
+        <form class="flex flex-col gap-2">
+          <p-select [options]="sizes" optionLabel="name" placeholder="Chọn chiều rộng dây" class="w-full"/>
+          <p-select [options]="sizes" optionLabel="name" placeholder="Chọn chiều rộng dây" class="w-full"/>
+          <p-select [options]="sizes" optionLabel="name" placeholder="Chọn chiều rộng dây" class="w-full"/>
+        </form>
+        <div class="flex items-center mb-2 mt-2 text-sm gap-3">
+          <p-image src="https://primefaces.org/cdn/primeng/images/galleria/galleria10.jpg" alt="Image" width="64"
+                   [preview]="true"/>
+          <div>
+            <p>Khóa kim dây đồng hồ – Bạc</p>
+            <p>
+              <span class="mr-1">{{ 0 | currency: 'VND' }}</span>
+              <span class="text-gray-400 line-through mr-1">{{ 30000 | currency:'VND' }}</span>
+              <span class="border border-gray-400 rounded-md px-1">100%</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center mb-4">
+        <span class="text-gray-500 mr-2">
+            TÌNH TRẠNG HÀNG:
+        </span>
+        <span class="text-blue-500">
+            Theo đơn
+        </span>
+        <i class="fas fa-info-circle text-blue-500 ml-2">
+        </i>
+      </div>
+      <div class="flex mb-4 gap-2 w-full">
+        <div class="w-1/2 flex-grow">
+          <p-button label="Thêm vào giỏ hàng" icon="pi pi-check" styleClass="w-full text-grey-800"/>
+        </div>
+        <div class="w-1/2 flex-grow">
+          <p-button label="Mua ngay" severity="contrast" styleClass="w-full"/>
+        </div>
+      </div>
+      <div class="mb-4">
+        <p>
+          <span class="font-bold">
+              Kiểu khâu:
+          </span>
+          Khâu tay thủ công
+        </p>
+        <p>
+          <span class="font-bold">
+              Kiểu độn:
+          </span>
+          Độn phẳng và mỏng
+        </p>
+        <p>
+          <span class="font-bold">
+              Lót:
+          </span>
+          Da Silicone chống mồ hôi
+        </p>
+      </div>
+      <ul class="list-disc pl-5 mb-4">
+        <li>
+          Tặng kèm Chốt Thông Minh, Khóa Kim và Apple Watch adapter (theo yêu cầu).
+        </li>
+        <li>
+          Nhận gia công theo Size yêu cầu.
+        </li>
+        <li>
+          Lưu ý: Màu sắc và hình dạng vân thực tế có thể khác ảnh sản phẩm do điều kiện ánh sáng khi chụp
+          và tấm da thuộc được sử dụng.
+        </li>
+      </ul>
+      <div class="flex items-center mb-4">
+        <i class="fas fa-shipping-fast text-blue-500 mr-2">
+        </i>
+        <span>
+            Freeship COD Toàn Quốc
+        </span>
+      </div>
+      <div class="flex items-center mb-4">
+        <i class="fas fa-shield-alt text-blue-500 mr-2">
+        </i>
+        <span>
+            Bảo hành 1 năm
+        </span>
+      </div>
+      <div class="flex items-center">
+        <i class="fas fa-exchange-alt text-blue-500 mr-2">
+        </i>
+        <span>
+            Đổi/trả trong 7 ngày
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!--  Product detail -->
+
+  <div class="mt-20 px-0 md:px-8">
+    <p-tabs value="0" scrollable>
+      <p-tablist class="flex justify-center">
+        <ng-template #previcon>
+          <i class="pi pi-minus"></i>
+        </ng-template>
+        <p-tab value="0">
+          <span class="font-bold whitespace-nowrap">Mô tả</span>
+        </p-tab>
+        <p-tab value="1">
+          <span class="font-bold whitespace-nowrap">Thông số</span>
+        </p-tab>
+        <p-tab value="2">
+          <span class="font-bold whitespace-nowrap">Vận chuyển</span>
+        </p-tab>
+        <ng-template #nexticon>
+          <i class="pi pi-plus"></i>
+        </ng-template>
+      </p-tablist>
+      <p-tabpanels>
+        <p-tabpanel value="0">
+          <p class="m-0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </p>
+        </p-tabpanel>
+        <p-tabpanel value="1">
+          <p class="m-0">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+            dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius
+            modi.
+          </p>
+        </p-tabpanel>
+        <p-tabpanel value="2">
+          <p class="m-0">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+            atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
+            sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
+            facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+            impedit quo minus.
+          </p>
+        </p-tabpanel>
+      </p-tabpanels>
+    </p-tabs>
+  </div>
+</app-container>
+
+<!-- FAQ -->
+<section class="bg-[#f7f7f7] mt-16 py-20">
+  <app-container>
+
+    <h2 class="text-4xl font-medium text-center mb-8">
+      Câu Hỏi Thường Gặp
+    </h2>
+    <div class="px-0 md:px-8">
+      <p-accordion>
+        <p-accordion-panel value="0">
+          <p-accordion-header>1. Da được sử dụng có phải là da thật?</p-accordion-header>
+          <p-accordion-content>
+            <p class="m-0">
+              Tất cả sản phẩm da của Heritela đều được làm từ da thật 100%. Nếu sản phẩm sử dụng da tổng hợp, chúng tôi sẽ
+              ghi rõ trong phần mô tả sản phẩm.
+            </p>
+          </p-accordion-content>
+        </p-accordion-panel>
+
+        <p-accordion-panel value="1">
+          <p-accordion-header>2. Đổi trả có mất phí không?</p-accordion-header>
+          <p-accordion-content>
+            <p class="m-0">
+              Khách hàng sẽ chỉ cần trả phí vận chuyển cho việc đổi trả. Chúng tôi sẽ không tính phí nhập kho cho các sản
+              phẩm đổi trả.
+            </p>
+          </p-accordion-content>
+        </p-accordion-panel>
+
+        <p-accordion-panel value="2">
+          <p-accordion-header>3. Tôi muốn nhận sản phẩm nhanh hơn thời gian dự kiến có được không?</p-accordion-header>
+          <p-accordion-content>
+            <p class="m-0">
+              Nếu cần nhận sản phẩm gấp, quý khách vui lòng liên hệ bộ phận Chăm Sóc Khách Hàng để được tư vấn thêm.
+            </p>
+          </p-accordion-content>
+        </p-accordion-panel>
+      </p-accordion>
+    </div>
+  </app-container>
+</section>
+
+<!-- You may like -->
+<section class="mt-16 py-20">
+  <app-container>
+    <h2 class="text-4xl font-medium text-center mb-8">
+      Có thể bạn cũng thích
+    </h2>
+    <div class="px-0 md:px-8">
+      <p-accordion>
+        <p-accordion-panel value="0">
+          <p-accordion-header>1. Da được sử dụng có phải là da thật?</p-accordion-header>
+          <p-accordion-content>
+            <p class="m-0">
+              Tất cả sản phẩm da của Heritela đều được làm từ da thật 100%. Nếu sản phẩm sử dụng da tổng hợp, chúng tôi sẽ
+              ghi rõ trong phần mô tả sản phẩm.
+            </p>
+          </p-accordion-content>
+        </p-accordion-panel>
+
+        <p-accordion-panel value="1">
+          <p-accordion-header>2. Đổi trả có mất phí không?</p-accordion-header>
+          <p-accordion-content>
+            <p class="m-0">
+              Khách hàng sẽ chỉ cần trả phí vận chuyển cho việc đổi trả. Chúng tôi sẽ không tính phí nhập kho cho các sản
+              phẩm đổi trả.
+            </p>
+          </p-accordion-content>
+        </p-accordion-panel>
+
+        <p-accordion-panel value="2">
+          <p-accordion-header>3. Tôi muốn nhận sản phẩm nhanh hơn thời gian dự kiến có được không?</p-accordion-header>
+          <p-accordion-content>
+            <p class="m-0">
+              Nếu cần nhận sản phẩm gấp, quý khách vui lòng liên hệ bộ phận Chăm Sóc Khách Hàng để được tư vấn thêm.
+            </p>
+          </p-accordion-content>
+        </p-accordion-panel>
+      </p-accordion>
+    </div>
+  </app-container>
+</section>
+
+<div class="flex justify-center items-center w-screen">
+  <app-swiper ngSkipHydration></app-swiper>
+</div>

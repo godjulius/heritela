@@ -1,7 +1,7 @@
-<div class="flex w-full h-full flex-col items-center">
+<div id="sliderImg" class="flex w-full flex-col items-center gap-4">
   <!-- Ảnh lớn với hiệu ứng kéo -->
   <div
-    class="relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-grab active:cursor-grabbing"
+    class="relative aspect-square overflow-hidden shadow-lg cursor-grab active:cursor-grabbing"
     (mousedown)="onMouseDown($event)"
     (touchstart)="onMouseDown($event)"
     (touchmove)="onMouseMove($event)"
@@ -22,5 +22,5 @@
     </div>
   </div>
 
- <app-carousel [(currentIndex)]="currentIndex" [viewWidth]="viewWidth"></app-carousel>
+  <app-carousel [(currentIndex)]="currentIndex"></app-carousel>
 </div>

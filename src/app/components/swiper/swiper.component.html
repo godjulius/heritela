@@ -1,0 +1,28 @@
+<swiper-container
+  navigation="true"
+  slides-per-view="1"
+  speed="500"
+  pagination="true"
+  class="w-[600px]"
+>
+<!--  @for(image of images; track image) {-->
+<!--    <swiper-slide>-->
+<!--      <img [src]="image" alt="test">-->
+<!--    </swiper-slide>-->
+<!--  }-->
+  <swiper-slide *ngFor="let img of images; let i = index">
+    <img [src]="img" alt="test" loading="lazy">
+  </swiper-slide>
+<!--  <swiper-slide>-->
+<!--    <img src="https://picsum.photos/600/600?random=1" alt="test">-->
+<!--  </swiper-slide>-->
+<!--  <swiper-slide>-->
+<!--    <img src="https://picsum.photos/600/600?random=2" alt="test">-->
+<!--  </swiper-slide>-->
+<!--  <swiper-slide>-->
+<!--    <img src="https://picsum.photos/600/600?random=3" alt="test">-->
+<!--  </swiper-slide>-->
+<!--  <swiper-slide>-->
+<!--    <img src="https://picsum.photos/600/600?random=4" alt="test">-->
+<!--  </swiper-slide>-->
+</swiper-container>

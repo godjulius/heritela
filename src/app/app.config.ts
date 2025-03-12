@@ -10,7 +10,11 @@ import {MyPreset} from "./app-preset";
 import {provideFileRouter, requestContextInterceptor, withDebugRoutes, withExtraRoutes} from '@analogjs/router';
 import {Routes} from "@angular/router";
 import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
+import {
+  register as registerSwiperElement,
+} from 'swiper/element/bundle'
 
+registerSwiperElement();
 const customRoutes: Routes = [
   {
     path: 'contact',

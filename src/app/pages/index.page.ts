@@ -1,27 +1,68 @@
 import { Component, signal } from '@angular/core';
-import {RouterLink} from "@angular/router";
+import { ButtonModule } from 'primeng/button';
+import { CurrencyPipe } from '@angular/common';
+import { SelectModule } from 'primeng/select';
+import { ImageModule } from 'primeng/image';
+import {ContainerComponent} from "../components/container/container.component";
 import {SlideshowComponent} from "../components/carousel/slideshow.component";
-import {CarouselComponent} from "../components/sub-carousel /sub-carousel.component";
+import {TabsModule} from "primeng/tabs";
+import {BadgeModule} from "primeng/badge";
+import {AvatarModule} from "primeng/avatar";
+import {AccordionModule} from "primeng/accordion";
+import {AnimateOnScroll} from "primeng/animateonscroll";
+import {SwiperComponent} from "../components/swiper/swiper.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  template: `
-   <div class="w-screen h-screen flex justify-center items-center">
-     <div class="h-[80vh] w-[60vw]">
-        <app-slideshow [viewWidth]="600"></app-slideshow>
+  templateUrl: 'index.component.html',
+  styles: [
+    `
+            :host {
+                @keyframes slidedown-icon {
+                    0% {
+                        transform: translateY(0);
+                    }
 
-     </div>
-   </div>
-  `,
-  styles: `
+                    50% {
+                        transform: translateY(20px);
+                    }
 
-  `,
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
+
+                .slidedown-icon {
+                    animation: slidedown-icon;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                }
+
+                .box {
+                    background-image: radial-gradient(var(--primary-300), var(--primary-600));
+                    border-radius: 50% !important;
+                    color: var(--primary-color-text);
+                }
+            }
+        `
+  ],
   imports: [
-    RouterLink,
+    ButtonModule,
+    ContainerComponent,
     SlideshowComponent,
-    CarouselComponent
+    CurrencyPipe,
+    SelectModule,
+    ImageModule,
+    ButtonModule,
+    TabsModule, AvatarModule, AccordionModule, SwiperComponent,
   ]
 })
 export default class HomeComponent {
+  sizes = [
+    { name: 'Nhỏ', value: 14 },
+    { name: 'Vừa', value: 18 },
+    { name: 'Lớn', value: 22 },
+    { name: 'Siêu lớn', value: 26 },
+  ];
 }
